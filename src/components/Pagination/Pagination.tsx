@@ -39,7 +39,9 @@ export const Pagination = (props: PaginationProps) => {
             href={`#${page}`}
             onClick={e => {
               e.preventDefault();
-              onPageChange(page);
+              if (page !== currentPage) {
+                onPageChange(page);
+              }
             }}
             data-cy="pageLink"
             className="page-link"
